@@ -1,28 +1,40 @@
-function printPattern(n) {
-    for (let i = 1; i <= n; i++) {
-      let left = "";
-      let middle = "";
+function generatePattern5(n) {
+  let result = "";
+
+  for (let i = 1; i <= n; i++) { // Outer loop for rows
       let right = "";
-  
-      // Left half: increasing numbers
-      for (let j = 1; j <= i; j++) {
-        left += j;
+      let reverse = "";
+
+      for (let j = 1; j <= i; j++) { // Inner loop for columns
+          right += j;
       }
-  
-      // Middle repeating part (repeat 'i' - 1 times if row > 1)
-      for (let k = 1; k < i; k++) {
-        middle += i;
+
+      for (let k = i; k >= 1; k--) { // Inner loop for descending
+          reverse += k;
       }
-  
-      // Right half: decreasing numbers
-      for (let j = i; j >= 1; j--) {
-        right += j;
-      }
-  
-      // Combine and print
-      console.log(left + middle + right);
-    }
+      
+      result += right + " ".repeat(2 * (n - i)) + reverse + "\n";
   }
-  
-  printPattern(4);
-  
+  return result;
+}
+
+// console.log(generatePattern5(4))
+
+for(let i = 1 ; i < 5 ; i++){
+  let left = '';
+  let right = '';
+  for(
+    // let j = 1 ; j <= i ; j++
+    let j = 1; j <= i; j++
+  ){
+    left += j
+  }
+  for(
+    // let k = i ; k <= 1 ; k--
+    let k = i; k >= 1; k--
+  ){
+    right += k
+  }
+  console.log(left + ' '.repeat(2* (4 - i)) + right)
+}
+
