@@ -30,7 +30,7 @@ for(let i = 1 ; i < 5 ; i++){
     left += j
   }
   for(
-    // let k = i ; k <= 1 ; k--
+    // let k = i ; k <= 1 ; k-- 
     let k = i; k >= 1; k--
   ){
     right += k
